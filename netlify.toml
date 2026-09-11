@@ -2,6 +2,10 @@
   command = "pnpm build"
   publish = ".next"
 
+# Explicitly enable the server adapter for both Git and source-upload builds.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [build.environment]
   NODE_VERSION = "22"
   PNPM_VERSION = "11.19.0"
