@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { SiteHeader, SiteFooter } from "@/components/site-chrome";
+export default function NotFound(){return <><SiteHeader simple /><main id="main" className="thank-you shell"><p className="eyebrow">PAGE NOT FOUND</p><h1>Let’s get you<br /><em>back home.</em></h1><p>We couldn’t find that page.</p><Link className="button button-dark" href="/" style={{marginTop:"2rem"}}>Back to RJ Insulation</Link></main><SiteFooter /></>}

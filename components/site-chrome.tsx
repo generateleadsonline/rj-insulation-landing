@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { ArrowUpRight, Phone } from "lucide-react";
+export function SiteHeader({simple=false}:{simple?:boolean}) {
+  return <><a className="skip-link" href="#main">Skip to content</a><header className="site-header shell"><Link href="/" aria-label="RJ Insulation home"><img className="logo" src="/images/rj-logo.svg" width="208" height="50" alt="RJ Insulation" /></Link><nav aria-label="Main navigation">{!simple && <><a href="#insulation">Loft insulation</a><a href="#loft-storage">Loft storage</a></>}<a className="header-call" href="tel:08008044625"><Phone size={17} aria-hidden="true" /><span>0800 804 4625</span></a><a href={simple?"/#insulation":"#insulation"} className="header-cta">Find your fit <ArrowUpRight size={18} aria-hidden="true" /></a></nav></header></>;
+}
+export function SiteFooter() {
+  return <footer className="site-footer"><div className="shell"><div className="footer-main"><Link href="/" aria-label="RJ Insulation home"><img src="/images/rj-logo-white.svg" width="226" height="55" alt="RJ Insulation" /></Link><p>A little more comfort.<br />A little more possibility.</p><div><a className="footer-phone" href="tel:08008044625">0800 804 4625</a><a href="mailto:info@rjinsulation.co.uk">info@rjinsulation.co.uk</a></div></div><div className="footer-bottom"><p>© {new Date().getFullYear()} RJ Insulation · R&amp;J [IPSWICH] LIMITED · Company no. 12282538<br />Units 3 &amp; 4, Handford Business Park, Handford Cut, Ipswich, IP1 2HD</p><a href="https://rjinsulation.co.uk/privacy-policy/" target="_blank" rel="noreferrer">Privacy policy<span className="sr-only"> (opens in a new tab)</span> <ArrowUpRight size={14} /></a></div></div></footer>;
+}
