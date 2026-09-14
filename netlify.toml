@@ -1,18 +1,57 @@
+# RJ Insulation landing page — static site, no build step.
+# Deploy by dragging this folder onto the Netlify project, or link the GitHub repo (publish directory: "." or "site").
+
 [build]
-  command = "pnpm build"
-  publish = ".next"
+  base = "site"
+  publish = "."
+  command = ""
 
-# Explicitly enable the server adapter for both Git and source-upload builds.
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
-[build.environment]
-  NODE_VERSION = "22"
-  PNPM_VERSION = "11.19.0"
-  NEXT_TELEMETRY_DISABLED = "1"
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[dev]
-  command = "pnpm dev"
-  targetPort = 3000
-  port = 8888
-  framework = "next"
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/thank-you/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "private, no-store"
+
+# Old Next.js thank-you URLs (no trailing slash) keep working
+[[redirects]]
+  from = "/thank-you/insulation"
+  to = "/thank-you/insulation/"
+  status = 301
+[[redirects]]
+  from = "/thank-you/loft-storage"
+  to = "/thank-you/loft-storage/"
+  status = 301
+
+# Short campaign URLs (use these as the Google Ads final URLs)
+[[redirects]]
+  from = "/insulation"
+  to = "/loft-insulation/"
+  status = 301
+[[redirects]]
+  from = "/storage"
+  to = "/loft-storage-rooms/"
+  status = 301

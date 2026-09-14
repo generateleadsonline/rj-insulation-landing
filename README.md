@@ -1,36 +1,29 @@
-# RJ Insulation landing page
+# RJ Insulation campaign landing pages
 
-Live website: [rj-insulation-landing.netlify.app](https://rj-insulation-landing.netlify.app/).
+Live site: https://rj-insulation-landing.netlify.app/
 
-The page includes the insulation and loft boarding calculators and their thank-you pages, the tighter layout, and the integrated survey panel.
+The current production source is in **`site/`**: a static HTML, CSS and JavaScript site covering the generic campaign page, `/loft-insulation/`, `/loft-storage-rooms/` and both thank-you pages. No dependencies or build step are required.
+
+## Preview
+
+```sh
+python3 -m http.server 8765 --directory site
+```
+
+Open http://localhost:8765/. Calculator forms run in demo mode on localhost. Production enquiries use the existing Netlify Forms setup.
 
 ## Deployment
 
-The site is published on Netlify. Automatic deployment from GitHub is not yet linked.
+The existing Netlify project is published through manual uploads; automatic GitHub deployment is not linked. Upload the contents of `site/` as a ZIP to the existing **rj-insulation-landing** project's Deploys page. Its `netlify.toml` preserves the site's headers and redirects. For a future Git-based deployment, the root configuration points to `site/`.
 
-To enable automatic deployments, open the existing Netlify project's repository settings, link this GitHub repository, and select the `main` branch. Build configuration is committed in `netlify.toml`:
+See `site/readme.md` for forms, tracking and content documentation. Preserve `data-netlify="true"`, form names and honeypot attributes when editing.
 
-| Setting | Value |
-| --- | --- |
-| Build command | `pnpm build` |
-| Publish directory | `.next` |
-| Node.js | `22` |
-| pnpm | `11.19.0` |
+## September 2026 visual updates
 
-The configuration explicitly enables Netlify's Next.js adapter.
+- Align the header phone icon with the phone number, including mobile.
+- Add structured fact cards, consistent dividers and readable labels to all three pages.
+- Add 24px above the property-era links, 0.85rem between calculator questions and hints, and 24px above and below the included-features panel.
+- Use responsive WebP versions of AI-enhanced RJ project photographs in the photo bands, labelled as enhanced. Original project photos remain available and are used in the package cards.
+- Match font URL casing to the actual assets so local and production fonts load consistently.
 
-## Local development
-
-```sh
-pnpm install --frozen-lockfile
-pnpm dev
-```
-
-## Verification commands
-
-```sh
-pnpm build
-pnpm lint
-pnpm typecheck
-pnpm test:integration
-```
+The static source was recovered from Netlify production deploy `6aa7e6c4106ca38a6508bbfb` on 14 September 2026. The former Next.js implementation remains in the repository for reference but is not the current published site.
