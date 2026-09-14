@@ -23,7 +23,7 @@ See `site/readme.md` for forms, tracking and content documentation. Preserve `da
 - Align the header phone icon with the phone number, including mobile.
 - Add structured fact cards, consistent dividers and readable labels to all three pages.
 - Add 24px above the property-era links, 0.85rem between calculator questions and hints, and 24px above and below the included-features panel.
-- Use responsive WebP versions of AI-enhanced RJ project photographs in the photo bands, labelled as enhanced. Original project photos remain available and are used in the package cards.
+- Use responsive WebP imagery with concise captions: enhanced project photography for storage and a clean illustrative loft image for insulation. Original project photos remain available and are used in the package cards.
 - Match font URL casing to the actual assets so local and production fonts load consistently.
 
 The static source was recovered from Netlify production deploy `6aa7e6c4106ca38a6508bbfb` on 14 September 2026. The former Next.js implementation remains in the repository for reference but is not the current published site.

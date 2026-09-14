@@ -69,7 +69,7 @@ GTM is loaded after the first user interaction or 2.5 s after page load so it do
 
 The current pages are maintained directly in this folder. Update shared header, footer and calculator markup across all applicable pages together; the CSS and JavaScript are shared.
 
-The photo bands use AI-enhanced versions of the original RJ project photographs, clearly labelled in their captions. The original photos remain in `images/` and in the package cards. The enhanced WebP images are supplied in three responsive sizes.
+The storage photo bands use enhanced versions of the original RJ project photograph. The insulation band uses an illustrative image of a clean insulated loft, with a general service caption. The original photos remain in `images/` and in the package cards. The enhanced WebP images are supplied in three responsive sizes.
 
 ## Files
 
