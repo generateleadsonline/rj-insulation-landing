@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+
+Sitemap: https://rj-insulation-landing.netlify.app/sitemap.xml
